@@ -1,0 +1,405 @@
+/* ============================================================
+   ОБЩИЕ СТИЛИ
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f5f7fa;
+    padding: 30px 20px;
+    color: #1a1a2e;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a2e;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* ============================================================
+   КАРТОЧКА СОЗДАНИЯ
+   ============================================================ */
+
+.create-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 30px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.create-card label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+}
+
+.create-card input {
+    padding: 10px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 160px;
+    transition: border-color 0.2s;
+}
+
+.create-card input:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+/* ============================================================
+   КНОПКИ
+   ============================================================ */
+
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn-primary {
+    background: #6366f1;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+.btn-success {
+    background: #10b981;
+    color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+    background: #059669;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: #dc2626;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #6b7280;
+    border: 2px solid #e5e7eb;
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+/* ============================================================
+   СПИСОК БРОНИРОВАНИЙ
+   ============================================================ */
+
+.bookings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.booking-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: all 0.2s;
+    border-left: 4px solid #e5e7eb;
+}
+
+.booking-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Статусные цвета границы */
+.booking-card.status-new {
+    border-left-color: #6366f1;
+}
+
+.booking-card.status-paid {
+    border-left-color: #10b981;
+}
+
+.booking-card.status-cancelled {
+    border-left-color: #ef4444;
+    opacity: 0.7;
+}
+
+/* ============================================================
+   ИНФОРМАЦИЯ О БРОНИРОВАНИИ
+   ============================================================ */
+
+.booking-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.booking-id {
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 13px;
+    min-width: 70px;
+}
+
+.booking-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.detail-item .label {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.detail-item .value {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.detail-item .value.remaining {
+    color: #ef4444;
+}
+
+.detail-item .value.remaining.zero {
+    color: #10b981;
+}
+
+/* ============================================================
+   БЭЙДЖИ СТАТУСОВ
+   ============================================================ */
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.new {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+
+.status-badge.paid {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ============================================================
+   ДЕЙСТВИЯ НАД БРОНИРОВАНИЕМ
+   ============================================================ */
+
+.booking-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.booking-actions .pay-input {
+    width: 90px;
+    padding: 6px 10px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.booking-actions .pay-input:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+/* ============================================================
+   ПУСТОЕ СОСТОЯНИЕ
+   ============================================================ */
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6b7280;
+}
+
+.empty-state .icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+/* ============================================================
+   УВЕДОМЛЕНИЯ (TOAST)
+   ============================================================ */
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 1000;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.success {
+    background: #10b981;
+}
+
+.toast.error {
+    background: #ef4444;
+}
+
+.toast.info {
+    background: #6366f1;
+}
+
+/* ============================================================
+   ЗАГРУЗКА (СКЕЛЕТОН)
+   ============================================================ */
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    border: 3px solid #e5e7eb;
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+
+@media (max-width: 640px) {
+    .create-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .create-card input {
+        width: 100%;
+    }
+
+    .booking-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+    }
+
+    .booking-info {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .booking-details {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .booking-actions {
+        flex-wrap: wrap;
+    }
+
+    .booking-actions .pay-input {
+        width: 100%;
+    }
+}
